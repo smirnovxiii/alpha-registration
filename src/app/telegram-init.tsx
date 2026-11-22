@@ -8,6 +8,7 @@ declare global {
       WebApp?: {
         ready: () => void;
         expand: () => void;
+        disableVerticalSwipes?: () => void;
         requestFullscreen?: () => void;
       };
     };
@@ -18,11 +19,12 @@ export default function TelegramInit() {
   useEffect(() => {
     const initTelegram = () => {
       const app = window.Telegram?.WebApp;
-
       if (!app) return;
 
       app.ready();
       app.expand();
+
+      app.disableVerticalSwipes?.();
 
       if (app.requestFullscreen) {
         try {
