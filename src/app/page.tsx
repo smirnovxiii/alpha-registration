@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -38,122 +39,113 @@ export default function Home() {
   }
 
   return (
-    <main
-      className="min-h-screen bg-[#f7f1e8] px-4 pb-8 sm:px-8"
-      style={{
-        paddingTop: "max(16px, env(safe-area-inset-top))",
-        paddingBottom: "max(32px, env(safe-area-inset-bottom))",
-      }}
-    >
-      <div className="mx-auto max-w-5xl alpha-appear">
+    <main className="aurora-page">
+      <div className="aurora-orb orb-one" />
+      <div className="aurora-orb orb-two" />
+      <div className="aurora-orb orb-three" />
 
-        {/* ШАПКА */}
-        <header className="alpha-hero relative mt-2 overflow-hidden rounded-[28px] px-6 py-10 text-center shadow-[0_16px_45px_rgba(65,20,29,0.18)] sm:rounded-[36px] sm:py-16">
-
-          <div className="pointer-events-none absolute inset-0 opacity-80">
-            <span className="absolute left-[12%] top-[18%] h-2 w-2 rounded-full bg-[#e8c17d]" />
-            <span className="absolute right-[15%] top-[24%] h-3 w-3 rounded-full bg-[#e8c17d]" />
-            <span className="absolute left-[24%] bottom-[18%] h-2 w-2 rounded-full bg-[#f0d49e]" />
-            <span className="absolute right-[25%] bottom-[15%] h-2 w-2 rounded-full bg-[#d6a65e]" />
-            <span className="absolute left-[50%] top-[12%] h-1.5 w-1.5 rounded-full bg-white" />
-            <span className="absolute right-[8%] bottom-[35%] h-1.5 w-1.5 rounded-full bg-white" />
+      <div className="aurora-container">
+        <header className="aurora-header">
+          <div className="brand-pill">
+            <span className="brand-dot" />
+            A PLACE TO EXPLORE FAITH
           </div>
 
-          <div className="relative">
-            <p className="mb-3 text-[10px] font-medium tracking-[0.35em] text-[#ead4b5]">
-              A PLACE TO EXPLORE FAITH
+          <div className="hero-content">
+            <div className="hero-symbol">✳</div>
+            <p className="hero-eyebrow">ВЕРА · ОБЩЕНИЕ · НОВЫЕ ЗНАКОМСТВА</p>
+            <h1>
+              Альфа<span>.</span>
+            </h1>
+            <p className="hero-description">
+              Место, где можно быть собой,
+              задавать вопросы и открывать новое.
             </p>
+          </div>
 
-            <div className="alpha-script text-[76px] leading-none text-[#fff9ed] sm:text-[108px]">
-              Альфа
-            </div>
-
-            <div className="mx-auto my-5 h-px w-16 bg-[#cba46c]" />
-
-            <p className="text-[10px] font-medium tracking-[0.25em] text-[#f0d9b8] sm:text-xs">
-              ВЕРА · ОБЩЕНИЕ · НОВЫЕ ЗНАКОМСТВА
-            </p>
+          <div className="hero-bottom">
+            <span>WELCOME TO ALPHA</span>
+            <span>✦</span>
           </div>
         </header>
 
-        {/* ПРИВЕТСТВИЕ */}
-        <section className="px-2 pb-7 pt-9 sm:px-4 sm:pt-12">
-          <p className="mb-3 text-[10px] font-semibold tracking-[0.25em] text-[#a17b51]">
+        <section className="intro-section">
+          <div className="intro-label">
+            <span className="intro-line" />
             ДОБРО ПОЖАЛОВАТЬ
-          </p>
+          </div>
 
-          <h1 className="max-w-2xl text-[34px] font-medium leading-[1.13] tracking-[-0.045em] text-[#421d24] sm:text-5xl">
+          <h2>
             Каждая история
             <br />
-            начинается со знакомства.
-          </h1>
+            начинается <span>со знакомства.</span>
+          </h2>
 
-          <p className="mt-4 max-w-xl text-sm leading-7 text-[#88766f] sm:text-base">
-            Альфа — место, где можно задавать вопросы,
-            знакомиться с христианством, общаться и вместе
-            исследовать веру.
+          <p>
+            Альфа — место, где можно знакомиться с христианством,
+            общаться, задавать любые вопросы и вместе исследовать веру.
           </p>
         </section>
 
-        {/* ФОРМА ИЛИ УСПЕХ */}
         {submitted ? (
-          <section className="rounded-[28px] border border-[#eadfd1] bg-[#fffdf8] px-6 py-12 text-center shadow-[0_12px_40px_rgba(65,30,25,0.06)] sm:px-12 sm:py-16">
-            <div className="mx-auto mb-7 flex h-16 w-16 items-center justify-center rounded-full border border-[#d7bd91] bg-[#f8f0e2] text-3xl text-[#8a633e]">
-              ✓
+          <section className="form-card success-card">
+            <div className="success-icon">
+              <span>✓</span>
             </div>
 
-            <p className="mb-3 text-[10px] font-semibold tracking-[0.25em] text-[#a17b51]">
-              ALPHA COURSE
-            </p>
-
-            <h2 className="text-3xl font-medium text-[#421d24]">
-              Спасибо!
-            </h2>
-
-            <p className="mx-auto mt-4 max-w-md text-sm leading-7 text-[#88766f]">
-              Регистрация успешно сохранена. Мы рады, что ты
-              помогаешь новым людям познакомиться с Альфой!
+            <div className="section-tag">ALPHA COMMUNITY</div>
+            <h2>Спасибо!</h2>
+            <p>
+              Регистрация успешно сохранена.
+              Спасибо, что помогаешь новым людям познакомиться с Альфой!
             </p>
 
             <button
               onClick={() => setSubmitted(false)}
-              className="mt-9 rounded-full bg-[#70232f] px-7 py-4 text-sm font-medium text-white transition hover:bg-[#501923] active:scale-[0.98]"
+              className="submit-button"
             >
-              Зарегистрировать ещё одного гостя
+              Зарегистрировать ещё одного гостя <span>→</span>
             </button>
           </section>
         ) : (
-          <section className="overflow-hidden rounded-[28px] border border-[#eadfd1] bg-[#fffdf8] shadow-[0_12px_40px_rgba(65,30,25,0.06)] sm:rounded-[32px]">
-
-            <div className="border-b border-[#eee4d8] px-6 py-7 sm:px-10 sm:py-9">
-              <p className="mb-3 text-[10px] font-semibold tracking-[0.25em] text-[#a17b51]">
-                РЕГИСТРАЦИЯ ГОСТЯ
-              </p>
-
-              <h2 className="text-2xl font-medium tracking-tight text-[#421d24] sm:text-3xl">
-                Давай познакомимся.
-              </h2>
-
-              <p className="mt-3 max-w-lg text-sm leading-6 text-[#928078]">
-                Заполни информацию о человеке, которого приглашаешь.
-                Все поля обязательны.
-              </p>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-6 px-6 py-7 sm:px-10 sm:py-9">
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Имя гостя">
-                  <input name="firstName" required placeholder="Имя" className="field" />
-                </Field>
-
-                <Field label="Фамилия гостя">
-                  <input name="lastName" required placeholder="Фамилия" className="field" />
-                </Field>
+          <section className="form-card">
+            <div className="form-heading">
+              <div>
+                <div className="section-tag">
+                  <span className="tag-dot" />
+                  РЕГИСТРАЦИЯ ГОСТЯ
+                </div>
+                <h2>Давай познакомимся.</h2>
+                <p>
+                  Расскажи нам немного о человеке,
+                  которого приглашаешь на Альфу.
+                </p>
               </div>
 
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Возраст">
+              <div className="form-decoration">✳</div>
+            </div>
+
+            <form onSubmit={handleSubmit}>
+              <div className="form-grid">
+                <Field label="Имя гостя" number="01">
+                  <input
+                    name="firstName"
+                    required
+                    placeholder="Например, Анна"
+                    className="aurora-input"
+                  />
+                </Field>
+
+                <Field label="Фамилия гостя" number="02">
+                  <input
+                    name="lastName"
+                    required
+                    placeholder="Фамилия"
+                    className="aurora-input"
+                  />
+                </Field>
+
+                <Field label="Возраст" number="03">
                   <input
                     name="age"
                     type="number"
@@ -161,78 +153,88 @@ export default function Home() {
                     max="120"
                     required
                     placeholder="Сколько лет?"
-                    className="field"
+                    className="aurora-input"
                   />
                 </Field>
 
-                <Field label="Номер телефона">
+                <Field label="Номер телефона" number="04">
                   <input
                     name="phone"
                     type="tel"
                     required
                     placeholder="+375 XX XXX XX XX"
-                    className="field"
+                    className="aurora-input"
                   />
                 </Field>
               </div>
 
-              <Field label="Расскажи немного о госте">
+              <div className="form-divider" />
+
+              <Field label="Расскажи немного о госте" number="05">
                 <textarea
                   name="description"
                   required
                   rows={4}
                   placeholder="Чем занимается, что ему интересно? Что нам полезно знать для знакомства и рассадки?"
-                  className="field resize-none"
+                  className="aurora-input aurora-textarea"
                 />
               </Field>
 
-              <div className="border-t border-[#eee4d8] pt-7">
-                <p className="mb-5 text-[10px] font-semibold tracking-[0.25em] text-[#a17b51]">
-                  КТО ПРИГЛАШАЕТ?
-                </p>
+              <div className="inviter-block">
+                <div className="inviter-heading">
+                  <div className="inviter-icon">♡</div>
+                  <div>
+                    <h3>Кто приглашает?</h3>
+                    <p>Укажи своё имя, чтобы мы знали, кто пригласил гостя.</p>
+                  </div>
+                </div>
 
-                <Field label="Имя и фамилия приглашающего">
+                <Field label="Имя и фамилия приглашающего" number="06">
                   <input
                     name="inviter"
                     required
                     placeholder="Твоё имя и фамилия"
-                    className="field"
+                    className="aurora-input"
                   />
                 </Field>
               </div>
 
-              <p className="text-xs leading-6 text-[#a09185]">
-                Контактные данные используются организаторами
-                для подготовки и организации Альфа-курса.
-              </p>
+              <div className="privacy-note">
+                <span>✧</span>
+                <p>
+                  Контактные данные используются организаторами
+                  для подготовки и организации Альфа-курса.
+                </p>
+              </div>
 
               {error && (
-                <p className="rounded-xl bg-red-50 p-4 text-sm text-red-700">
+                <div className="error-message" role="alert">
                   {error}
-                </p>
+                </div>
               )}
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-2xl bg-[#70232f] px-6 py-[18px] text-sm font-medium tracking-wide text-white shadow-[0_8px_20px_rgba(112,35,47,0.16)] transition hover:bg-[#501923] active:scale-[0.99] disabled:opacity-50"
+                className="submit-button"
               >
-                {loading ? "Сохраняем регистрацию..." : "Зарегистрировать гостя  →"}
+                <span>
+                  {loading ? "Сохраняем регистрацию..." : "Зарегистрировать гостя"}
+                </span>
+                {!loading && <span className="button-arrow">→</span>}
               </button>
+
+              <p className="form-footnote">
+                С любовью и мыслью о каждом <span>✦</span>
+              </p>
             </form>
           </section>
         )}
 
-        {/* ПОДВАЛ */}
-        <footer className="pb-3 pt-9 text-center">
-          <div className="alpha-script text-3xl text-[#8b3942]">
-            Альфа
-          </div>
-          <p className="mt-2 text-[9px] font-medium tracking-[0.25em] text-[#a58d79]">
-            С МЫСЛЬЮ О КАЖДОМ
-          </p>
+        <footer className="aurora-footer">
+          <div className="footer-logo">альфа.</div>
+          <p>С МЫСЛЬЮ О КАЖДОМ</p>
         </footer>
-
       </div>
     </main>
   );
@@ -240,15 +242,18 @@ export default function Home() {
 
 function Field({
   label,
+  number,
   children,
 }: {
   label: string;
+  number: string;
   children: React.ReactNode;
 }) {
   return (
-    <label className="block">
-      <span className="mb-2 block text-sm font-medium text-[#573c3b]">
-        {label} <span className="text-[#b68a50]">*</span>
+    <label className="aurora-field">
+      <span className="field-heading">
+        <span>{label}</span>
+        <span className="field-number">{number}</span>
       </span>
       {children}
     </label>
